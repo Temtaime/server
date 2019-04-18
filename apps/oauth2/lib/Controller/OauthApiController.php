@@ -107,7 +107,7 @@ class OauthApiController extends Controller {
 		}
 
 		try {
-			$client = $this->clientMapper->getByUid($accessToken->getClientId());
+			$client = $this->clientMapper->getByUid((int)$accessToken->getClientId());
 		} catch (ClientNotFoundException $e) {
 			return new JSONResponse([
 				'error' => 'invalid_request',
